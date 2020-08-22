@@ -30,7 +30,7 @@ class Stemmer: TokenFilter {
 
 class POSFilter: TokenFilter {
     companion object {
-        val STOP_POS_LIST = listOf("助詞", "副詞", "記号")
+        val STOP_POS_LIST = listOf("助詞", "助動詞", "副詞", "記号", "接頭詞")
     }
     override fun filter(token: Token): Token? {
         return token.takeUnless { STOP_POS_LIST.contains(token.partOfSpeech) }
